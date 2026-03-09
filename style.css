@@ -1,0 +1,736 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0056b3; /* Professional Blue */
+}
+
+.logo span {
+  color: #20c997; /* Hygiene Teal */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #20c997;
+}
+
+.cta-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #004494;
+}
+/* --- Global Styles --- */
+:root {
+    --primary-color: #0056b3;    /* Professional Blue */
+    --secondary-color: #25D366;  /* WhatsApp Green */
+    --text-dark: #333;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo span { color: #002d5c; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1581578731522-5b1747169944?auto=format&fit=crop&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* --- Sections General --- */
+section {
+    padding: 5rem 10%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+/* --- Hero Typography Update --- */
+.hero-content h1 {
+    font-size: 4rem; /* Big and bold */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Makes text readable over images */
+}
+
+/* The Span Styling */
+.hero-content h1 span {
+    color: var(--secondary-color); /* This uses the WhatsApp Green or a bright accent */
+    display: inline-block;
+    position: relative;
+}
+
+/* Optional: Subtle underline under the priority span */
+.hero-content h1 span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: rgba(37, 211, 102, 0.3);
+    position: absolute;
+    bottom: 5px;
+    z-index: -1;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+/* Outline Button style */
+.btn-outline {
+    background: transparent !important;
+    border: 2px solid var(--white);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background: var(--white) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Responsive adjustment for the big title */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .btn-outline {
+        margin-left: 0;
+    }
+}
+/* --- Services Grid --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 4px solid var(--primary-color);
+}
+/*----- Sectors Grid ----- */
+#sectors {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sectors h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #1c1e21;
+}
+
+/* The Grid Container */
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Card Styling */
+.sector-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Clips the image to the border radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sector-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image container sizing */
+.sector-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures image fills space without stretching */
+    display: block;
+}
+
+/* Text inside the card */
+.sector-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.sector-info h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sector-info p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- Contact & Form --- */
+#contact {
+    background: var(--light-bg);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+/* Contact Grid Styling */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem; /* Space between cards and form */
+}
+
+.contact-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Big "Logo" Icons */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--light-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    font-size: 2.5rem; /* Makes the Emoji/Icon Big */
+    color: var(--primary-color);
+}
+
+.contact-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.contact-card a, .contact-card address {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contact-card a:hover {
+    color: var(--primary-color);
+}
+/* --- Quote Section Styles --- */
+.quote-section {
+    background-color: var(--light-bg);
+    padding: 6rem 10%;
+}
+
+.quote-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quote-info {
+    flex: 1;
+}
+
+.subtitle {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.quote-info h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.quote-info h2::after {
+    margin: 10px 0; /* Align underline to left */
+}
+
+.benefit-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.benefit-list li {
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Form Styling */
+.quote-form-container {
+    flex: 1;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Container styling */
+#quoteForm {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Form group layout */
+.select-wrapper, textarea {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Style for Select & Textarea */
+#frequency, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9fbff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* Focus states for better accessibility */
+#frequency:focus, textarea:focus {
+    outline: none;
+    border-color: #25d366; /* WhatsApp Green */
+    box-shadow: 0 0 8px rgba(37, 211, 102, 0.2);
+}
+
+/* Textarea specific styling */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* The WhatsApp Submit Button */
+.quote-submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s active;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.quote-submit-btn:hover {
+    background-color: #128c7e; /* Darker WhatsApp Green */
+}
+
+.quote-submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #aab8c2;
+}
+.quote-form-container input, 
+.quote-form-container select, 
+.quote-form-container textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.quote-form-container input:focus {
+    border-color: var(--primary-color);
+}
+
+.quote-submit-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.quote-submit-btn:hover {
+    background: #004494;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .quote-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quote-info h2::after {
+        margin: 10px auto;
+    }
+    
+    .input-row {
+        flex-direction: column;
+    }
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#whatsappForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+input, select, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#whatsappForm button {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+#whatsappForm button:hover {
+    background: #1eb954;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Simplified for this example */
+    .hero-content h1 { font-size: 2rem; }
+    section { padding: 3rem 5%; }
+}
+/* --- Footer Styles --- */
+.main-footer {
+    background-color: #1a1a1a; /* Dark professional background */
+    color: #e0e0e0;
+    padding: 4rem 10% 1rem 10%;
+    margin-top: 5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 3rem;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--primary-color);
+    margin-top: 8px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px; /* Subtle slide effect */
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Mobile responsive footer */
+@media (max-width: 768px) {
+    .footer-grid {
+        text-align: center;
+    }
+    .footer-col h3::after {
+        margin: 8px auto;
+    }
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #333; /* Default dark background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* WhatsApp Hover - Official Green */
+.whatsapp-footer:hover {
+    background-color: #25D366;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Facebook Hover - Official Blue */
+.facebook-footer:hover {
+    background-color: #1877F2;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
