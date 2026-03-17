@@ -10,6 +10,122 @@
   top: 0;
   z-index: 1000;
 }
+/* --- Navbar Core Styling --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.nav-logo {
+    height: 60px; /* Bigger size as requested */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-text span {
+    color: #007bff; /* Example Primary Color */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Hide toggle and mobile items by default */
+.nav-toggle, .nav-toggle-label, .mobile-only {
+    display: none;
+}
+
+/* --- Mobile Responsiveness (Screens smaller than 992px) --- */
+@media screen and (max-width: 992px) {
+    .nav-actions {
+        display: none; /* Hide the big button on mobile */
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: #333;
+        height: 3px;
+        width: 25px;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    .nav-toggle-label span::before { content: ""; top: 8px; }
+    .nav-toggle-label span::after { content: ""; top: -11px; }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        clip-path: circle(0% at top right); /* Menu hidden */
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    /* Show menu when checkbox is clicked */
+    .nav-toggle:checked ~ .nav-links {
+        clip-path: circle(150% at top right);
+    }
+}
+
+/* --- General Grid Responsiveness --- */
+@media screen and (max-width: 768px) {
+    .service-grid, .sectors-grid, .contact-grid, .footer-grid {
+        grid-template-columns: 1fr !important; /* Forces single column on small phones */
+        gap: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
 
 .logo {
   font-size: 1.5rem;
@@ -733,4 +849,60 @@ input, select, textarea {
     background-color: #1877F2;
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+/* Ensure the logo container aligns items horizontally */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: inherit; /* Keeps your existing text color */
+}
+/* Container for the logo image and text */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem; /* Slightly larger text to match the bigger logo */
+    color: #333; /* Use your primary brand color here */
+    gap: 12px; /* Space between the image and the text */
+}
+
+/* The actual Logo Image */
+.logo img {
+    height: 70px; /* Increased from 50px for a bigger look */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Optional: Slight hover effect to make it interactive */
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Ensure the navbar has enough height to accommodate the larger logo */
+.navbar {
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    min-height: 90px; /* Adjust this if the logo feels too tight */
+}
+
+.logo img {
+    max-height: 50px; /* Adjust this to fit your navbar height */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Specific styling for footer logo if needed */
+.footer-logo img {
+    max-height: 70px;
+    display: block;
+    background-color: #004494;
 }
